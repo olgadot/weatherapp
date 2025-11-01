@@ -80,10 +80,16 @@ hr {
   color: #506584;
 }
 
-.temp-degrees {
+.temp {
   font-size: 62px;
   font-weight: 500;
-  margin-right: 15px;
+  margin-top: 0;
+}
+
+.temp-unit {
+  font-size: 32px;
+  margin-top: 10px;
+  color: #506584;
 }
 
 .temp-icon {
