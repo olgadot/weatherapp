@@ -20,7 +20,7 @@ a {
 
 h1 {
   margin-top: 0;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 hr {
@@ -84,7 +84,7 @@ hr {
 
 .current-city-date p {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--text-muted);
 }
 
@@ -114,14 +114,14 @@ hr {
 .humidity,
 .wind {
   width: 45%;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   color: var(--text-muted);
 }
 
 .humidity-percent,
 .wind-speed {
-  font-size: 32px;
+  font-size: 30px;
   color: var(--text-light);
 }
 
