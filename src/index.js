@@ -1,19 +1,57 @@
+function refreshWeather(response) {
+  // temperature and weather element
+  let tempElement = document.querySelector("#temp");
+  let currentDescriptionElement = document.querySelector(
+    "#current-description"
+  );
+
+  //   humidity, wind, feels like temperature elements
+  let humidityElement = document.querySelector("#humidity-percent");
+  let windElement = document.querySelector("#wind-speed");
+  let feelsLikeTempElement = document.querySelector("#feels-like-temp");
+
+  let temp = Math.round(response.data.temperature.current);
+  let currentDescription = response.data.condition.description;
+
+  let humiditiy = Math.round(response.data.temperature.humidity);
+  let wind = Number.parseFloat(response.data.wind.speed).toFixed(1);
+  let tempFeelsLike = Math.round(response.data.temperature.feels_like);
+
+  tempElement.innerHTML = temp;
+  currentDescriptionElement.innerHTML = currentDescription;
+  humidityElement.innerHTML = humiditiy;
+  windElement.innerHTML = wind;
+  feelsLikeTempElement.innerHTML = tempFeelsLike;
+}
+
+function searchCity(city) {
+  let apiKey = "1o02ad6aa40e7b19fa37f8t5928ba37d";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+
+  axios.get(apiUrl).then(refreshWeather);
+}
+
 function handleSearchForm(event) {
   event.preventDefault();
 
-  let query = document.querySelector("#search-input");
+  //   Get input city from the form
+  let searchInput = document.querySelector("#search-input");
+  console.log(searchInput.value);
   let city = document.querySelector("#city");
-  city.innerHTML = query.value;
+  city.innerHTML = searchInput.value;
+
+  //   Query data for the input city
+  searchCity(searchInput.value);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSearchForm);
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearchForm);
 
 let query = "London";
 let apiKey = "1o02ad6aa40e7b19fa37f8t5928ba37d";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}`;
 
-// axios.get(apiUrl);
+axios.get(apiUrl);
 
 axios
   .get(apiUrl)

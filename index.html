@@ -21,7 +21,7 @@
   <body>
     <div class="weather-app">
       <header>
-        <h1>Olun Weather</h1>
+        <h1 id="title">Olun Weather</h1>
         <form class="search-form" , id="search-form">
           <input
             type="text"
@@ -36,20 +36,22 @@
       </header>
       <main>
         <div class="current-weather">
-          <div class="current-city-date-temp">
-            <div class="current-city-date">
+          <div class="current-main">
+          <div class="current-left">
               <h1 id="city">Stockholm</h1>
-              <p>
-                12:30<br />
-                Saturday, November 1 <br />
-                Partially cloudy
-              </p>
+              <div class="current-description">
+                <span class="current-time" id = "current-time">12:30</span>
+                <span class="current-date", id = "current-date">Saturday, November 1</span>
+                <span class="current-description" id = "current-description">Partially cloudy</span>
+              </div>
             </div>
-            <div class="current-temp">
-              <span class="temp">8</span><span class="temp-unit">&degC</span>
+            <div class="current-right">
+              <span class="temp" id="temp">8</span
+              ><span class="temp-unit">&degC</span>
               <div class="temp-icon">🌤️</div>
             </div>
-          </div>
+            </div>
+          
 
           <hr />
 
@@ -59,7 +61,10 @@
                 <span class="material-icons">water_drop</span>
                 <span class="label">humidity</span>
               </div>
-              <span class="humidity-percent">87 %</span>
+              <div class="label-row">
+                <span class="humidity-percent" id="humidity-percent">87</span>
+                <span class="humidity-unit">%</span>
+              </div>
             </div>
 
             <div class="wind">
@@ -67,7 +72,10 @@
                 <span class="material-icons">air</span>
                 <span class="label">wind</span>
               </div>
-              <span class="wind-speed">7.2 km/h</span>
+              <div class="label-row">
+                <span class="wind-speed" id="wind-speed">7.2 </span>
+                <span class="wind-speed-unit">km/h</span>
+              </div>
             </div>
 
             <div class="feels-like">
@@ -75,10 +83,14 @@
                 <span class="material-icons">thermostat</span>
                 <span class="label">feels like</span>
               </div>
-              <span class="feels-like-temp">8 &deg;C</span>
+              <div class="label-row">
+                <span class="feels-like-temp" id="feels-like-temp">8 </span>
+                <span class="feels-like-unit">&deg;C</span>
+              </div>
             </div>
           </div>
         </div>
+        
       </main>
 
       <footer>
@@ -91,6 +103,7 @@
         <a href="https://weatherapp-olun.netlify.app" target="_blank">Netlify</a
         >.
       </footer>
+    </div>
     </div>
     <script src="src/index.js"></script>
   </body>

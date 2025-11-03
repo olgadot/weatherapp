@@ -74,19 +74,18 @@ hr {
   border-left: 5px solid var(--accent);
 }
 
-.current-city-date-temp {
+.current-main {
   display: flex;
   justify-content: space-between;
 }
 
-.current-temp {
+.current-description {
   display: flex;
+  flex-direction: column;
 }
-
-.current-city-date p {
-  font-size: 18px;
-  font-weight: 300;
-  color: var(--text-muted);
+.current-right {
+  display: flex;
+  flex-direction: row;
 }
 
 .temp {
@@ -120,7 +119,6 @@ hr {
   flex: 1; /* makes them equal width */
   display: flex;
   flex-direction: column; /* label above value */
-  /* align-items: flex-start; */
   color: var(--text-muted);
 }
 
@@ -142,6 +140,13 @@ hr {
 .humidity-percent,
 .wind-speed,
 .feels-like-temp {
+  font-size: 28px;
+  color: white;
+}
+
+.humidity-unit,
+.wind-speed-unit,
+.feels-like-unit {
   font-size: 28px;
   color: white;
 }
