@@ -107,33 +107,43 @@ hr {
 }
 
 .current-air-details {
-  margin-top: 30px;
   display: flex;
-  font-size: 24px;
+  justify-content: space-between; /* spreads 3 items evenly */
+  align-items: flex-start;
+  gap: 60px;
+  margin-top: 30px;
 }
 
 .humidity,
-.wind {
-  width: 45%;
-  font-size: 18px;
-  font-weight: 300;
+.wind,
+.feels-like {
+  flex: 1; /* makes them equal width */
+  display: flex;
+  flex-direction: column; /* label above value */
+  /* align-items: flex-start; */
   color: var(--text-muted);
 }
 
-.humidity-icon-text,
-.wind-icon-text {
+.label-row {
   display: flex;
   align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
 }
 
 .material-icons {
-  margin-right: 5px;
+  font-size: 22px;
+}
+
+.label {
+  font-weight: 300;
 }
 
 .humidity-percent,
-.wind-speed {
-  font-size: 30px;
-  color: var(--text-light);
+.wind-speed,
+.feels-like-temp {
+  font-size: 28px;
+  color: white;
 }
 
 footer {
