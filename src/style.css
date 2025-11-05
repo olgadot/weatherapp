@@ -23,6 +23,11 @@ h1 {
   font-weight: 300;
 }
 
+h2 {
+  font-weight: 300;
+  font-size: 20px;
+}
+
 hr {
   border: none;
   height: 1px;
@@ -34,6 +39,7 @@ hr {
   max-width: 600px;
   margin: 20px auto;
   padding: 10px;
+  background-color: transparent;
 }
 
 .search-form {
@@ -159,4 +165,37 @@ hr {
 footer {
   margin-top: 25px;
   opacity: 0.6;
+}
+
+.forecast {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.forecast-day {
+  background-color: var(--bg-dark);
+  border-radius: 5px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid var(--text-muted);
+}
+
+.forecast-date {
+  font-size: 20px;
+}
+
+.forecast-temperatures {
+  text-align: center;
+  color: var(--accent);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.forecast-temperature {
+  padding: 0 5px;
 }

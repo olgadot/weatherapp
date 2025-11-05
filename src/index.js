@@ -49,33 +49,31 @@ function refreshWeather(response) {
     "#current-description"
   );
 
-  //   humidity, wind, feels like temperature elements
-  let humidityElement = document.querySelector("#humidity-percent");
-  let windElement = document.querySelector("#wind-speed");
-  let feelsLikeTempElement = document.querySelector("#feels-like-temp");
-
   let temp = Math.round(response.data.temperature.current);
   let currentDescription = response.data.condition.description;
-
-  let humiditiy = Math.round(response.data.temperature.humidity);
-  let wind = Number.parseFloat(response.data.wind.speed).toFixed(1);
-  let tempFeelsLike = Math.round(response.data.temperature.feels_like);
-
-  //  date and time
-  let date = new Date(response.data.time * 1000);
-  let currentTimeElement = document.querySelector("#current-time");
-  let currentDateElement = document.querySelector("#current-date");
+  tempElement.innerHTML = temp;
+  currentDescriptionElement.innerHTML = currentDescription;
 
   // icon
   let iconElement = document.querySelector("#temp-icon");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 
-  tempElement.innerHTML = temp;
-  currentDescriptionElement.innerHTML = currentDescription;
+  //   humidity, wind, feels like temperature elements
+  let humidityElement = document.querySelector("#humidity-percent");
+  let windElement = document.querySelector("#wind-speed");
+  let feelsLikeTempElement = document.querySelector("#feels-like-temp");
+  let humiditiy = Math.round(response.data.temperature.humidity);
+  let wind = Number.parseFloat(response.data.wind.speed).toFixed(1);
+  let tempFeelsLike = Math.round(response.data.temperature.feels_like);
   humidityElement.innerHTML = humiditiy;
   windElement.innerHTML = wind;
   feelsLikeTempElement.innerHTML = tempFeelsLike;
 
+  //  date and time
+  // let date = new Date(response.data.time * 1000);
+  let date = new Date();
+  let currentTimeElement = document.querySelector("#current-time");
+  let currentDateElement = document.querySelector("#current-date");
   currentTimeElement.innerHTML = formatTime(date);
   currentDateElement.innerHTML = formatDate(date);
 }
@@ -102,3 +100,6 @@ function handleSearchForm(event) {
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchForm);
+
+// Load default city
+searchCity("Stockholm");
